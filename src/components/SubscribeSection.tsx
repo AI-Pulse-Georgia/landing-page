@@ -95,8 +95,7 @@ const SubscribeSection = () => {
           {platforms.map((platform, index) => (
             <Card 
               key={platform.name}
-              className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 animate-slide-up hover:scale-105 cursor-pointer glow-cyan"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 animate-slide-up card-hover cursor-pointer glow-cyan stagger-${index + 1} group`}
               onClick={() => {
                 if (platform.link) {
                   window.open(platform.link, '_blank');
@@ -109,8 +108,8 @@ const SubscribeSection = () => {
               }}
             >
               <CardContent className="p-6 text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-background rounded-full mb-4">
-                  <platform.icon className={`h-8 w-8 ${platform.color}`} />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-background rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <platform.icon className={`h-8 w-8 ${platform.color} group-hover:animate-pulse`} />
                 </div>
                 <h3 className="text-lg font-semibold mb-2 text-foreground">{platform.name}</h3>
                 <p className="text-sm text-muted-foreground">{platform.description}</p>

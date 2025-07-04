@@ -67,8 +67,7 @@ const EpisodesSection = () => {
           {episodes.map((episode, index) => (
             <Card 
               key={episode.title}
-              className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-secondary/50 transition-all duration-300 animate-slide-up hover:scale-105 glow-purple"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`bg-card/50 backdrop-blur-sm border-border/50 hover:border-secondary/50 transition-all duration-300 animate-slide-up card-hover glow-purple stagger-${index + 1} group`}
             >
               <CardContent className="p-6">
                 <div className="flex items-center text-sm text-muted-foreground mb-3">
@@ -88,9 +87,9 @@ const EpisodesSection = () => {
                 
                 <Button 
                   variant="outline" 
-                  className="w-full border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
+                  className="w-full border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground group-hover:scale-105 transition-transform duration-300"
                 >
-                  <Play className="mr-2 h-4 w-4" />
+                  <Play className="mr-2 h-4 w-4 group-hover:animate-pulse" />
                   Listen Now
                 </Button>
               </CardContent>

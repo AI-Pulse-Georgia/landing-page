@@ -15,11 +15,11 @@ const HostSection = () => {
           </p>
         </div>
 
-        <Card className="bg-card/50 backdrop-blur-sm border-primary/20 animate-slide-up glow-cyan max-w-2xl mx-auto">
+        <Card className="bg-card/50 backdrop-blur-sm border-primary/20 animate-slide-up glow-cyan max-w-2xl mx-auto card-hover">
           <CardContent className="p-8 text-center">
             {/* Host Avatar Placeholder */}
-            <div className="w-32 h-32 bg-gradient-pulse rounded-full mx-auto mb-6 flex items-center justify-center">
-              <div className="w-28 h-28 bg-background rounded-full flex items-center justify-center">
+            <div className="w-32 h-32 bg-gradient-pulse rounded-full mx-auto mb-6 flex items-center justify-center animate-float group">
+              <div className="w-28 h-28 bg-background rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
                 <span className="text-4xl font-bold gradient-text">AI</span>
               </div>
             </div>

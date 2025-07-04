@@ -119,6 +119,12 @@ All colors MUST be HSL.
       linear-gradient(rgba(0, 207, 255, 0.1) 1px, transparent 1px),
       linear-gradient(90deg, rgba(0, 207, 255, 0.1) 1px, transparent 1px);
     background-size: 2rem 2rem;
+    animation: grid-shift 20s linear infinite;
+  }
+
+  @keyframes grid-shift {
+    0% { background-position: 0 0; }
+    100% { background-position: 2rem 2rem; }
   }
 
   /* Glow Effects */
@@ -138,12 +144,45 @@ All colors MUST be HSL.
     background-clip: text;
   }
 
-  /* Hero Button */
+  /* Interactive Elements */
   .hero-button {
-    @apply bg-primary text-primary-foreground hover:scale-105 transform transition-all duration-300 glow-cyan;
+    @apply bg-primary text-primary-foreground hover:scale-105 transform transition-all duration-300 glow-cyan relative overflow-hidden;
+  }
+  
+  .hero-button::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -translate-x-full transition-transform duration-1000;
+  }
+  
+  .hero-button:hover::before {
+    @apply translate-x-full;
   }
   
   .hero-button-secondary {
-    @apply bg-secondary text-secondary-foreground hover:scale-105 transform transition-all duration-300 glow-purple;
+    @apply bg-secondary text-secondary-foreground hover:scale-105 transform transition-all duration-300 glow-purple relative overflow-hidden;
   }
+
+  .hero-button-secondary::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -translate-x-full transition-transform duration-1000;
+  }
+  
+  .hero-button-secondary:hover::before {
+    @apply translate-x-full;
+  }
+
+  /* Card Hover Effects */
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:-translate-y-2;
+  }
+
+  .card-hover:hover {
+    box-shadow: 0 20px 40px hsl(var(--primary) / 0.15);
+  }
+
+  /* Stagger Animation */
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
 }

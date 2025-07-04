@@ -43,8 +43,7 @@ const AboutSection = () => {
           {features.map((feature, index) => (
             <Card 
               key={feature.title} 
-              className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 animate-slide-up glow-cyan hover:scale-105"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 animate-slide-up glow-cyan card-hover stagger-${index + 1}`}
             >
               <CardContent className="p-6 text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-pulse rounded-full mb-4">
