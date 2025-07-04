@@ -52,16 +52,14 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+				// AI Pulse Brand Colors
+				'brand-cyan': 'hsl(var(--brand-cyan))',
+				'brand-purple': 'hsl(var(--brand-purple))',
+				'brand-navy': 'hsl(var(--brand-navy))',
+			},
+			backgroundImage: {
+				'gradient-pulse': 'var(--gradient-pulse)',
+				'gradient-tech': 'var(--gradient-tech)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +82,51 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-ring': {
+					'0%': {
+						transform: 'scale(0.33)',
+						opacity: '1'
+					},
+					'80%, 100%': {
+						transform: 'scale(1.8)',
+						opacity: '0'
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0px)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
+				},
+				'glow': {
+					'0%, 100%': {
+						boxShadow: '0 0 20px hsl(var(--brand-cyan) / 0.3)'
+					},
+					'50%': {
+						boxShadow: '0 0 40px hsl(var(--brand-cyan) / 0.6)'
+					}
+				},
+				'slide-up': {
+					'from': {
+						opacity: '0',
+						transform: 'translateY(20px)'
+					},
+					'to': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-ring': 'pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'float': 'float 3s ease-in-out infinite',
+				'glow': 'glow 2s ease-in-out infinite alternate',
+				'slide-up': 'slide-up 0.6s ease-out'
 			}
 		}
 	},
