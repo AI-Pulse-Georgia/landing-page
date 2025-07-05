@@ -1,9 +1,8 @@
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Smartphone, Headphones, Radio, Rss } from "lucide-react";
+import { Headphones, Radio } from "lucide-react";
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
+import { SPOTIFY_URL, YOUTUBE_URL } from "@/lib/const";
 
 const SubscribeSection = () => {
   const [email, setEmail] = useState("");
@@ -24,27 +23,16 @@ const SubscribeSection = () => {
       name: "Spotify",
       icon: Headphones,
       color: "text-green-500",
-      description: "Listen on Spotify"
-    },
-    {
-      name: "Apple Podcasts",
-      icon: Smartphone,
-      color: "text-primary",
-      description: "Available on Apple Podcasts"
+      description: "Listen on Spotify",
+      link: SPOTIFY_URL,
     },
     {
       name: "YouTube",
       icon: Radio,
       color: "text-red-500",
       description: "Watch on YouTube",
-      link: "https://www.youtube.com/@AIPulseGeorgia"
+      link: YOUTUBE_URL,
     },
-    {
-      name: "RSS Feed",
-      icon: Rss,
-      color: "text-secondary",
-      description: "Subscribe via RSS"
-    }
   ];
 
   return (
@@ -55,50 +43,22 @@ const SubscribeSection = () => {
             Subscribe & <span className="gradient-text">Stay Connected</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Never miss an episode! Subscribe on your favorite platform and join our community of AI enthusiasts.
+            Never miss an episode! Subscribe on your favorite platform and join our community of AI
+            enthusiasts.
           </p>
         </div>
 
-        {/* Newsletter Signup */}
-        <Card className="bg-gradient-pulse mb-12 animate-slide-up">
-          <CardContent className="p-8">
-            <div className="max-w-md mx-auto text-center">
-              <h3 className="text-2xl font-bold text-white mb-4">
-                Get AI Pulse Updates
-              </h3>
-              <p className="text-white/90 mb-6">
-                Subscribe to our newsletter for episode alerts, AI news, and exclusive content.
-              </p>
-              
-              <form onSubmit={handleSubscribe} className="space-y-4">
-                <Input
-                  type="email"
-                  placeholder="Enter your email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/70"
-                  required
-                />
-                <Button 
-                  type="submit"
-                  className="w-full bg-white text-brand-navy hover:bg-white/90 font-semibold"
-                >
-                  Subscribe Now
-                </Button>
-              </form>
-            </div>
-          </CardContent>
-        </Card>
-
         {/* Platform Links */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {platforms.map((platform, index) => (
-            <Card 
+            <Card
               key={platform.name}
-              className={`bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 animate-slide-up card-hover cursor-pointer glow-cyan stagger-${index + 1} group`}
+              className={`bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 animate-slide-up card-hover cursor-pointer glow-cyan stagger-${
+                index + 1
+              } group`}
               onClick={() => {
                 if (platform.link) {
-                  window.open(platform.link, '_blank');
+                  window.open(platform.link, "_blank");
                 } else {
                   toast({
                     title: "Coming Soon!",
@@ -109,7 +69,9 @@ const SubscribeSection = () => {
             >
               <CardContent className="p-6 text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-background rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <platform.icon className={`h-8 w-8 ${platform.color} group-hover:animate-pulse`} />
+                  <platform.icon
+                    className={`h-8 w-8 ${platform.color} group-hover:animate-pulse`}
+                  />
                 </div>
                 <h3 className="text-lg font-semibold mb-2 text-foreground">{platform.name}</h3>
                 <p className="text-sm text-muted-foreground">{platform.description}</p>

@@ -9,25 +9,25 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* AI Pulse Georgia Brand Colors */
-    --background: 220 38% 11%;              /* Dark navy #0B0F1C */
-    --foreground: 0 0% 98%;                 /* Near white */
+    --background: 220 38% 11%; /* Dark navy #0B0F1C */
+    --foreground: 0 0% 98%; /* Near white */
 
-    --card: 220 35% 14%;                    /* Slightly lighter navy */
+    --card: 220 35% 14%; /* Slightly lighter navy */
     --card-foreground: 0 0% 98%;
 
     --popover: 220 35% 14%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 191 100% 50%;                /* Cyan #00CFFF */
+    --primary: 191 100% 50%; /* Cyan #00CFFF */
     --primary-foreground: 220 38% 11%;
 
-    --secondary: 280 66% 57%;               /* Violet-purple #A84ADB */
+    --secondary: 280 66% 57%; /* Violet-purple #A84ADB */
     --secondary-foreground: 0 0% 98%;
 
     --muted: 220 25% 25%;
     --muted-foreground: 0 0% 70%;
 
-    --accent: 191 100% 50%;                 /* Cyan accent */
+    --accent: 191 100% 50%; /* Cyan accent */
     --accent-foreground: 220 38% 11%;
 
     --destructive: 0 84.2% 60.2%;
@@ -38,14 +38,14 @@ All colors MUST be HSL.
     --ring: 191 100% 50%;
 
     /* AI Pulse Brand Specific */
-    --brand-cyan: 191 100% 50%;             /* #00CFFF */
-    --brand-purple: 280 66% 57%;            /* #A84ADB */
-    --brand-navy: 220 38% 11%;              /* #0B0F1C */
-    
+    --brand-cyan: 191 100% 50%; /* #00CFFF */
+    --brand-purple: 280 66% 57%; /* #A84ADB */
+    --brand-navy: 220 38% 11%; /* #0B0F1C */
+
     /* Gradients */
     --gradient-pulse: linear-gradient(135deg, hsl(var(--brand-cyan)), hsl(var(--brand-purple)));
     --gradient-tech: linear-gradient(180deg, hsl(var(--brand-navy)), hsl(220 35% 14%));
-    
+
     /* Animations */
     --pulse-duration: 2s;
     --glow-color: hsl(var(--brand-cyan) / 0.5);
@@ -108,32 +108,125 @@ All colors MUST be HSL.
   .pulse-ring {
     @apply absolute rounded-full border-2 border-primary animate-ping;
   }
-  
+
   .pulse-ring-secondary {
     @apply absolute rounded-full border-2 border-secondary animate-ping;
   }
 
   /* Tech Grid Pattern */
   .tech-grid {
-    background-image: 
-      linear-gradient(rgba(0, 207, 255, 0.1) 1px, transparent 1px),
+    background-image: linear-gradient(rgba(0, 207, 255, 0.1) 1px, transparent 1px),
       linear-gradient(90deg, rgba(0, 207, 255, 0.1) 1px, transparent 1px);
     background-size: 2rem 2rem;
     animation: grid-shift 20s linear infinite;
   }
 
   @keyframes grid-shift {
-    0% { background-position: 0 0; }
-    100% { background-position: 2rem 2rem; }
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 2rem 2rem;
+    }
   }
 
-  /* Glow Effects */
+  /* Enhanced Glow Effects */
   .glow-cyan {
     box-shadow: 0 0 20px hsl(var(--brand-cyan) / 0.3);
+    animation: glow-cyan 2s ease-in-out infinite alternate;
   }
-  
+
   .glow-purple {
     box-shadow: 0 0 20px hsl(var(--brand-purple) / 0.3);
+    animation: glow-purple 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow-cyan {
+    0% {
+      box-shadow: 0 0 20px hsl(var(--brand-cyan) / 0.3);
+      transform: scale(1);
+    }
+    100% {
+      box-shadow: 0 0 40px hsl(var(--brand-cyan) / 0.6);
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes glow-purple {
+    0% {
+      box-shadow: 0 0 20px hsl(var(--brand-purple) / 0.3);
+      transform: scale(1);
+    }
+    100% {
+      box-shadow: 0 0 40px hsl(var(--brand-purple) / 0.6);
+      transform: scale(1.05);
+    }
+  }
+
+  /* Shooting Star Animation */
+  @keyframes shooting-star {
+    0% {
+      transform: translateX(-100px) translateY(-100px);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100px) translateY(100px);
+      opacity: 0;
+    }
+  }
+
+  /* Color Changing Animation */
+  @keyframes color-shift {
+    0% {
+      color: hsl(var(--brand-cyan));
+    }
+    25% {
+      color: hsl(var(--brand-purple));
+    }
+    50% {
+      color: hsl(var(--brand-cyan));
+    }
+    75% {
+      color: hsl(var(--brand-purple));
+    }
+    100% {
+      color: hsl(var(--brand-cyan));
+    }
+  }
+
+  /* Floating with Rotation */
+  @keyframes float-rotate {
+    0% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+      transform: translateY(-10px) rotate(120deg);
+    }
+    66% {
+      transform: translateY(5px) rotate(240deg);
+    }
+    100% {
+      transform: translateY(0px) rotate(360deg);
+    }
+  }
+
+  /* Interactive Pulse */
+  @keyframes interactive-pulse {
+    0% {
+      box-shadow: 0 0 0 0 hsl(var(--brand-cyan) / 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 20px hsl(var(--brand-cyan) / 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 hsl(var(--brand-cyan) / 0);
+    }
   }
 
   /* Gradient Text */
@@ -142,31 +235,46 @@ All colors MUST be HSL.
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: gradient-shift 3s ease-in-out infinite;
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
   /* Interactive Elements */
   .hero-button {
     @apply bg-primary text-primary-foreground hover:scale-105 transform transition-all duration-300 glow-cyan relative overflow-hidden;
+    animation: interactive-pulse 2s infinite;
   }
-  
+
   .hero-button::before {
-    content: '';
+    content: "";
     @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -translate-x-full transition-transform duration-1000;
   }
-  
+
   .hero-button:hover::before {
     @apply translate-x-full;
   }
-  
+
   .hero-button-secondary {
     @apply bg-secondary text-secondary-foreground hover:scale-105 transform transition-all duration-300 glow-purple relative overflow-hidden;
+    animation: interactive-pulse 2s infinite;
   }
 
   .hero-button-secondary::before {
-    content: '';
+    content: "";
     @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -translate-x-full transition-transform duration-1000;
   }
-  
+
   .hero-button-secondary:hover::before {
     @apply translate-x-full;
   }
@@ -181,8 +289,16 @@ All colors MUST be HSL.
   }
 
   /* Stagger Animation */
-  .stagger-1 { animation-delay: 0.1s; }
-  .stagger-2 { animation-delay: 0.2s; }
-  .stagger-3 { animation-delay: 0.3s; }
-  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-1 {
+    animation-delay: 0.1s;
+  }
+  .stagger-2 {
+    animation-delay: 0.2s;
+  }
+  .stagger-3 {
+    animation-delay: 0.3s;
+  }
+  .stagger-4 {
+    animation-delay: 0.4s;
+  }
 }
