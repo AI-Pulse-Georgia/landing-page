@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, MessageCircle, Linkedin, Youtube } from "lucide-react";
-import { EMAIL, LINKEDIN_URL, YOUTUBE_URL } from "@/lib/const";
+import { Mail, MessageCircle, Linkedin, Youtube, Instagram } from "lucide-react";
+import { EMAIL, INSTAGRAM_URL, LINKEDIN_URL, YOUTUBE_URL } from "@/lib/const";
 
 const ContactSection = () => {
   const socialLinks = [
@@ -22,6 +22,12 @@ const ContactSection = () => {
       icon: Mail,
       link: `mailto:${EMAIL}`,
       color: "text-secondary hover:text-secondary/80",
+    },
+    {
+      name: "Instagram",
+      icon: Instagram,
+      link: INSTAGRAM_URL,
+      color: "text-pink-600 hover:text-pink-500",
     },
   ];
 

@@ -5,19 +5,6 @@ import { toast } from "@/hooks/use-toast";
 import { SPOTIFY_URL, YOUTUBE_URL } from "@/lib/const";
 
 const SubscribeSection = () => {
-  const [email, setEmail] = useState("");
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      toast({
-        title: "Subscribed!",
-        description: "Thank you for subscribing to AI Pulse Georgia updates.",
-      });
-      setEmail("");
-    }
-  };
-
   const platforms = [
     {
       name: "Spotify",
