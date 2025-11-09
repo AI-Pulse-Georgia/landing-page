@@ -1,0 +1,118 @@
+{
+  "@type": "DRSManifest",
+  "drs_version": "1.0",
+  "entity": {
+    "name": "AI Pulse Georgia",
+    "description": "AI Pulse Georgia is dedicated to exploring and advancing Georgia's AI future, focusing on innovation and development in artificial intelligence.",
+    "website": "https://aipulsegeorgia.ge/",
+    "category": [
+      "Artificial Intelligence",
+      "Technology Development",
+      "Innovation"
+    ],
+    "logo": "https://aipulsegeorgia.ge//logo.png",
+    "same_as": [
+      "https://www.linkedin.com/in/tornike-bolokadze/"
+    ]
+  },
+  "offerings": [
+    {
+      "name": "AI Innovation Workshops",
+      "description": "Workshops designed to foster innovation in AI, helping participants understand and implement AI technologies effectively.",
+      "categories": [
+        "Education",
+        "Workshops"
+      ],
+      "url": "https://aipulsegeorgia.ge/"
+    },
+    {
+      "name": "AI Development Programs",
+      "description": "Programs focused on developing AI solutions tailored to specific industry needs, enhancing operational efficiency.",
+      "categories": [
+        "Development",
+        "Technology"
+      ],
+      "url": "https://aipulsegeorgia.ge/"
+    },
+    {
+      "name": "AI Community Engagement",
+      "description": "Initiatives to engage and grow the AI community in Georgia, promoting collaboration and knowledge sharing.",
+      "categories": [
+        "Community",
+        "Networking"
+      ],
+      "url": "https://aipulsegeorgia.ge/"
+    }
+  ],
+  "knowledge": {
+    "summary": {
+      "tagline": "AI PULSEGEORGIA",
+      "mission": "AI Pulse Georgia aims to explore and advance the future of AI in Georgia by fostering innovation and development in the field. Their mission is to create a thriving AI ecosystem that supports technological growth and collaboration.",
+      "vision": "To position Georgia as a leader in AI innovation and development."
+    },
+    "target_audience": [
+      "AI researchers",
+      "Technology developers",
+      "Innovation leaders"
+    ],
+    "problems_solved": [
+      "Lack of AI innovation in Georgia",
+      "Need for AI community engagement",
+      "Challenges in implementing AI technologies",
+      "Limited access to AI development resources"
+    ],
+    "differentiators": [
+      "Focus on Georgia's AI future",
+      "Community-driven AI initiatives",
+      "Tailored AI development programs"
+    ],
+    "faqs": [
+      {
+        "question": "What is AI Pulse Georgia's main focus?",
+        "answer": "AI Pulse Georgia focuses on exploring and advancing the future of AI in Georgia by fostering innovation and development in artificial intelligence."
+      },
+      {
+        "question": "How does AI Pulse Georgia support AI innovation?",
+        "answer": "They offer workshops and development programs designed to help participants understand and implement AI technologies effectively, fostering a culture of innovation."
+      },
+      {
+        "question": "Who can benefit from AI Pulse Georgia's offerings?",
+        "answer": "AI researchers, technology developers, and innovation leaders looking to engage with and grow the AI community in Georgia can benefit from their offerings."
+      },
+      {
+        "question": "What makes AI Pulse Georgia unique?",
+        "answer": "Their unique focus on Georgia's AI future and community-driven initiatives sets them apart, along with their tailored AI development programs."
+      },
+      {
+        "question": "How can I get involved with AI Pulse Georgia?",
+        "answer": "You can participate in their workshops, join their community initiatives, or engage with them through their website and social media platforms."
+      }
+    ],
+    "last_updated": "2025-11-06T12:22:44.584Z"
+  },
+  "answer_intents": [
+    {
+      "query": "What is AI Pulse Georgia?",
+      "short_answer": "AI Pulse Georgia is an organization dedicated to advancing AI innovation and development in Georgia.",
+      "reference_url": "https://aipulsegeorgia.ge/"
+    },
+    {
+      "query": "How does AI Pulse Georgia contribute to AI development?",
+      "short_answer": "They offer workshops and programs to foster AI innovation and community engagement in Georgia.",
+      "reference_url": "https://aipulsegeorgia.ge/"
+    }
+  ],
+  "trust": {
+    "@type": "TrustSignals",
+    "deeprank_score": 0,
+    "proofs": {
+      "domain_verified": true,
+      "security": {
+        "https": true,
+        "certifications": [
+          "SSL/TLS Encrypted"
+        ]
+      }
+    }
+  }
+}
